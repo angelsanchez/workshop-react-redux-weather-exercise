@@ -7,9 +7,9 @@
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.pro.js",
     "build": "npm run clean && npm run build:webpack",
-    "start": "NODE_ENV=production node server.js",
-    "server:dev": "NODE_ENV=development node server.js",
-    "test": "BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --require test/unit/setup.js --recursive test/unit/**/*.spec.js",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "server:dev": "cross-env NODE_ENV=development node server.js",
+    "test": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --require test/unit/setup.js --recursive test/unit/**/*.spec.js",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
